@@ -3,7 +3,7 @@ class PassengerMailer < ApplicationMailer
     @booking = params[:booking]
 
     @booking.passengers.each do |passenger|
-      mail(to: passenger.email, subject: 'Your Flight Has Been Booked!')
+      mail(subject: 'Airlines Booking Confirmation', to: passenger.email)
     end
   end
 end

@@ -16,11 +16,9 @@
           <%= "#{@flight.departure_airport.city} (#{@flight.departure_airport.code}) to
               #{@flight.arrival_airport.city} (#{@flight.arrival_airport.code})" %>
         </h4>
-        <p><%= "Departure: #{@flight.departure_date_formatted} - #{@flight.departure_time_formatted}" %></p>
+        <p><%= "Departure Date:  #{@flight.departure_date_formatted} - #{@flight.departure_time_formatted}" %></p>
 
-       <p> <%= "Duration: #{@flight.duration.to_i} hours" %></p>
-
-        <p> <%= "Flight Number: #{@flight.id}" %></p>
+        
 
     </div>
     <div class="passenger__wrapper">
@@ -45,8 +43,23 @@
         <% end %>
       </div>
     <% end %>
-  </div>
-        <%= form.submit "Purchase Flight", class: "button" %>
-        <%= link_to "Cancel", root_path, class: "back" %>
+  </div class="below">
+        <%= form.submit "Purchase Flight", class: "button", style: "margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out; " %>
+        <%= link_to "Cancel", root_path, class: "back", style: "margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        background-color: #007bff;
+        color: #ffff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        text-decoration: none; " %>
   </div>
 <% end %>

@@ -1,17 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe 'Searching for a flight', type: :feature do
-  let!(:ormoc) { FactoryBot.create(:airport, code: 'OMC', city: 'Ormoc') }
-  let!(:manila) { FactoryBot.create(:airport, code: 'MLA', city: 'Manila') }
+  let!(:Tacloban) { FactoryBot.create(:airport, code: 'TAC', city: 'Tacloban') }
+  let!(:manila) { FactoryBot.create(:airport, code: 'MNL', city: 'Manila') }
   let(:tomorrow) { (Date.today + 1).strftime("%Y-%m-%d") }
   let(:today) { Date.today.strftime("%Y-%m-%d") }
-  let!(:tomorrows_flight) { FactoryBot.create(:flight, departure_airport: ormoc,
+  let!(:tomorrows_flight) { FactoryBot.create(:flight, departure_airport: Tacloban,
                                                 arrival_airport: manila,
                                                 departure_time: Faker::Time.between(from: tomorrow, to: tomorrow),
                                                 departure_date: tomorrow
                                                )
                            }
-  let!(:todays_flight) { FactoryBot.create(:flight, departure_airport: ormoc,
+  let!(:todays_flight) { FactoryBot.create(:flight, departure_airport: Tacloban,
                                             arrival_airport: manila,
                                             departure_time: Faker::Time.between(from: today, to: today),
                                             departure_date: today
@@ -21,7 +21,7 @@ RSpec.describe 'Searching for a flight', type: :feature do
   context 'when 2 flights available' do
     before do
       visit root_path
-      select 'Ormoc', from: 'departure_airport_id'
+      select 'Tacloban', from: 'departure_airport_id'
       select 'Manila', from: 'arrival_airport_id'
       select '2', from: 'passengers'
       select tomorrow, from: 'departure_date'
@@ -36,7 +36,7 @@ RSpec.describe 'Searching for a flight', type: :feature do
   context 'when 1 flight available' do
     before do
       visit root_path
-      select 'Ormoc', from: 'departure_airport_id'
+      select 'Tacloban', from: 'departure_airport_id'
       select 'Manila', from: 'arrival_airport_id'
       select '2', from: 'passengers'
       select today, from: 'departure_date'
@@ -51,7 +51,7 @@ RSpec.describe 'Searching for a flight', type: :feature do
   context 'when booking a flight' do
     before do
       visit root_path
-      select 'Ormoc', from: 'departure_airport_id'
+      select 'Tacloban', from: 'departure_airport_id'
       select 'Manila', from: 'arrival_airport_id'
       select '2', from: 'passengers'
       select tomorrow, from: 'departure_date'

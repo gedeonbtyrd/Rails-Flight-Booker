@@ -17,17 +17,17 @@
                                 #{flight.arrival_airport.city}
                                 (#{flight.arrival_airport.code})" %>
                               <%= "Departure: #{flight.departure_time_formatted}" %>
-                              <%= "Duration: #{flight.duration.to_i} hours" %>
+                              
                               </div>
 
           <% end %>
-              <%= form.submit "Book", class: "button" %>
+              <%= form.submit "Book Now", class: "button" %>
           </div>
           </div>
         <% end %>
       <% else %>
         <div class="error">
-          <h4>No flights found!! please search other dates!</h4>
+          <h4>No flights found, please search other dates!</h4>
         </div>
     <% end %>
 <% end %>

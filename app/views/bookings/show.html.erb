@@ -5,9 +5,9 @@
         <h4><%= "#{@booking.flight.departure_airport.city} (#{@booking.flight.departure_airport.code}) - #{@booking.flight.arrival_airport.city} (#{@booking.flight.arrival_airport.code})" %></h4>
               <div class="line-1"> </div>
 
-        <p><%= "Departure: #{@booking.flight.departure_date_formatted} - #{@booking.flight.departure_time_formatted}" %></p>
-        <p><%= "Duration: #{@booking.flight.duration.to_i} hours" %> </p>
-        <p><%= "Flight Number: #{@booking.flight.id}" %></p>
+        <p><b><%= "Departure Date: #{@booking.flight.departure_date_formatted} - #{@booking.flight.departure_time_formatted}" %></b></p>
+        
+        <p><%= "Ticket Number: #{@booking.flight.id}" %></p>
         </div>
     </div>
 
@@ -20,10 +20,10 @@
         <% end %> 
         <div class="line-1"></div>
 
-          <h3><%= "Name:" %></h3>
-          <p><%= passenger.name.titleize %></p>
-          <h3><%= "Email:" %></h3>
-          <p><%= passenger.email %></p>
+          <h3><%= "Name:" %><p><%= passenger.name.titleize %></p></h3>
+          
+          <h3><%= "Email:" %> <p><%= passenger.email %></p></h3>
+         
         </div>
       <% end %>
        </div>
