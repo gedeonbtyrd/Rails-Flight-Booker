@@ -4,7 +4,7 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <p><b>Your flight has been booked!</b></p>
+    <p><b style="color:darkgreen; font-size: 2rem;">Yehheeyy, Your flight has been booked!</b></p>
     <p><%= "#{@booking.flight.departure_airport.code} to #{@booking.flight.arrival_airport.code}" %></p>
     <p><%= "Ticket Number: #{@booking.flight.id}" %></p>
     <p><%= "Departure Date: #{@booking.flight.departure_date_formatted}"%></p>

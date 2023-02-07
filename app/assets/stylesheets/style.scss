@@ -16,7 +16,7 @@
         transition: all 0.2s ease-in-out;
 
         &:hover {
-            background-color: #06914b;
+            background-color: #0c4428;
         }
       }
     
@@ -30,11 +30,12 @@
         flex-wrap: wrap;
       }
 
-    $navBackground:#07bd5c;
+    $navBackground:#00944a;
     $Background:#333;
     $fontColor:#3905c7;
     $fontSecondColor:#00ff9d;
     $regularFont: rgb(255, 255, 255);
+    
 
 .nav-container{
     z-index: 1000;
