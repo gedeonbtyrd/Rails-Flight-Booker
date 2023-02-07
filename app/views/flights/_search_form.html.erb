@@ -1,0 +1,34 @@
+<%= form_with(model: @flight, url: flights_path, method: :get, class: "form-fields") do |form| %>
+  <% @days = Flight.distinct.pluck(:departure_date) %>
+  <div class="fields">
+    <h4>Departure: </h4>
+    <%= form.select :departure_airport_id,
+                    options_for_select(@airports.map { |a| [a.city, a.id] }),
+                    { include_blank: "Select Departure Airport" },
+                    { class: "selection" } %>
+  </div>
+
+  <div class="fields">
+    <h4>Arrival: </h4>
+    <%= form.select :arrival_airport_id,
+                    options_for_select(@airports.map { |a| [a.city, a.id] }),
+                    { include_blank: "Select Arrival Airport" },
+                    { class: "selection" } %>
+  </div>
+
+  <div class="fields">
+    <h4>Flight Date: </h4>
+    <%= form.select :departure_date,
+                    options_for_select(@days),
+                    { include_blank: "Select Flight Date" },
+                    { class: "selection" } %>
+  </div>
+
+  <div class="fields">
+    <h4>Number of Passenger: </h4>
+    <%= form.select :passengers,
+                    options_for_select((1..10).to_a),
+                    { class: "selection" } %>
+  </div>
+  <%= form.submit "Search", class: "button" %>
+<% end %>
